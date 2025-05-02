@@ -19,7 +19,7 @@
 #define DEFAULT_MEM_THRESHOLD 100 // Default threshold in MB
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("CyberGuardians");
+MODULE_AUTHOR("Group 4");
 MODULE_DESCRIPTION("System Health Metrics Monitor");
 MODULE_PARM_DESC(mem_threshold, "Memory usage threshold in MB");
 static int mem_threshold = DEFAULT_MEM_THRESHOLD;
@@ -36,7 +36,7 @@ void collect_metrics(void) {
 
     // Log memory usage and check threshold
     if (used_memory > mem_threshold) {
-        printk(KERN_WARNING "[CyberGuardians] Alert: Memory usage exceeded threshold! Used: %ld MB, Threshold: %d MB\n", used_memory, mem_threshold);
+        printk(KERN_WARNING "[Group 4] Alert: Memory usage exceeded threshold! Used: %ld MB, Threshold: %d MB\n", used_memory, mem_threshold);
     }
 }
 
@@ -78,7 +78,7 @@ static int __init sys_health_init(void) {
     timer_setup(&health_timer, timer_callback, 0);
     mod_timer(&health_timer, jiffies   msecs_to_jiffies(5000)); // Start timer
 
-    printk(KERN_INFO "[CyberGuardians] Module loaded. Memory threshold set to %d MB.\n", mem_threshold);
+    printk(KERN_INFO "[Group 4] Module loaded. Memory threshold set to %d MB.\n", mem_threshold);
     return 0;
 }
 
@@ -89,7 +89,7 @@ static void __exit sys_health_exit(void) {
     
     // Cleanup timer
     del_timer(&health_timer);
-    printk(KERN_INFO "[CyberGuardians] Module unloaded.\n");
+    printk(KERN_INFO "[Group 4] Module unloaded.\n");
 }
 
 // Module parameters
