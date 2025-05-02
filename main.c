@@ -2,7 +2,7 @@
  * Group Name: Group 4
  * Group Members: Joshua Martin, Jacob Brashear, Nicholas Christman
  * Course: SCIA 360 - Operating System Security
- * Project: 
+ * Project: Linux Kernel Module for real-time health monitoring
  */
 
 #include <linux/module.h>
