@@ -5,15 +5,16 @@
  * Project: Linux Kernel Module for real-time health monitoring
  */
 
-#include <linux/module.h>
-#include <linux/kernel.h>
-#include <linux/init.h>
-#include <linux/timer.h>
-#include <linux/proc_fs.h>
-#include <linux/sched.h>
-#include <linux/sysinfo.h>
-#include <linux/seq_file.h>
-#include <linux/jiffies.h>
+ #include <linux/module.h>
+ #include <linux/kernel.h>
+ #include <linux/proc_fs.h>
+ #include <linux/timer.h>
+ #include <linux/jiffies.h>
+ #include <linux/uaccess.h>
+ #include <linux/sched/loadavg.h>
+ #include <linux/fs.h>
+ #include <linux/seq_file.h>
+ #include <linux/mm.h>
 
 #define PROC_NAME "sys_health"
 #define DEFAULT_MEM_THRESHOLD 100 // Default threshold in MB
