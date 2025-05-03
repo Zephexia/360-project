@@ -180,7 +180,7 @@ static int __init sys_health_init(void) {
 // --------------------- Module Exit ---------------------
 
 static void __exit sys_health_exit(void) {
-    printk(KERN_INFO "[CyberGuardians] sys_health module unloading. Group: %s, Members: %s\n",
+    printk(KERN_INFO "TheThreeStooges sys_health module unloading. Group: %s, Members: %s\n",
            "TheThreeStooges", "Joshua Martin, Jacob Brashear, Nicholas Christman");
 
     // Remove the /proc entry
