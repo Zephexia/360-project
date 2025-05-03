@@ -198,5 +198,3 @@ module_exit(sys_health_exit);
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Joshua Martin, Jacob Brashear, Nicholas Christman");
 MODULE_DESCRIPTION("Kernel module for system health monitoring");
-```
-
