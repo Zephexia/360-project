@@ -80,21 +80,21 @@ static void collect_disk_io(void) {
 static void check_thresholds(void) {
     // Example: CPU Load Check
     if (current_metrics.cpu_load > 80) { // Example threshold
-        printk(KERN_WARNING "[CyberGuardians] Alert: CPU load exceeded threshold (%lu > 80)\n", current_metrics.cpu_load);
+        printk(KERN_WARNING "TheThreeStooges Alert: CPU load exceeded threshold (%lu > 80)\n", current_metrics.cpu_load);
     }
 
     // Example: Memory Usage Check
     if (current_metrics.memory_used_mb > mem_threshold) {
-        printk(KERN_WARNING "[CyberGuardians] Alert: Memory usage exceeded threshold (%lu MB > %d MB)\n",
+        printk(KERN_WARNING "TheThreeStooges Alert: Memory usage exceeded threshold (%lu MB > %d MB)\n",
                current_metrics.memory_used_mb, mem_threshold);
     }
 
     // Example: Disk I/O Check (Simple example, adjust as needed)
     if (current_metrics.disk_reads > 10000000) {  // Example: High read count
-        printk(KERN_WARNING "[CyberGuardians] Alert: Disk read count high (%lu)\n", current_metrics.disk_reads);
+        printk(KERN_WARNING "TheThreeStooges Alert: Disk read count high (%lu)\n", current_metrics.disk_reads);
     }
     if (current_metrics.disk_writes > 10000000) { // Example: High write count
-        printk(KERN_WARNING "[CyberGuardians] Alert: Disk write count high (%lu)\n", current_metrics.disk_writes);
+        printk(KERN_WARNING "TheThreeStooges Alert: Disk write count high (%lu)\n", current_metrics.disk_writes);
     }
 }
 
@@ -106,7 +106,7 @@ static void collect_metrics(void) {
     collect_disk_io(); // Collect disk I/O
 
     // Log the collected metrics
-    printk(KERN_INFO "[CyberGuardians] Metrics: CPU Load: %lu, Memory Used: %lu MB, Disk Reads: %lu, Disk Writes: %lu\n",
+    printk(KERN_INFO "TheThreeStooges Metrics: CPU Load: %lu, Memory Used: %lu MB, Disk Reads: %lu, Disk Writes: %lu\n",
            current_metrics.cpu_load, current_metrics.memory_used_mb, current_metrics.disk_reads, current_metrics.disk_writes);
 }
 
@@ -132,7 +132,7 @@ static ssize_t sys_health_read(struct file *file, char __user *buf, size_t count
     output_size = 256; // Adjust the size as needed
     output_string = kmalloc(output_size, GFP_KERNEL);
     if (!output_string) {
-        printk(KERN_ERR "[CyberGuardians] Error: Failed to allocate memory for proc output\n");
+        printk(KERN_ERR "TheThreeStooges Error: Failed to allocate memory for proc output\n");
         return -ENOMEM;
     }
 
@@ -160,13 +160,13 @@ static ssize_t sys_health_read(struct file *file, char __user *buf, size_t count
 // --------------------- Module Initialization ---------------------
 
 static int __init sys_health_init(void) {
-    printk(KERN_INFO "[CyberGuardians] sys_health module loaded. Group: %s, Members: %s\n",
-           "[Your Group Name]", "[Your Team Member Names]");
+    printk(KERN_INFO "TheThreeStooges sys_health module loaded. Group: %s, Members: %s\n",
+           "TheThreeStooges", "Joshua Martin, Jacob Brashear, Nicholas Christman");
 
     // Create /proc entry
     proc_entry = proc_create("sys_health", 0444, NULL, &sys_health_fops);
     if (!proc_entry) {
-        printk(KERN_ERR "[CyberGuardians] Error: Could not create /proc entry\n");
+        printk(KERN_ERR "TheThreeStooges Error: Could not create /proc entry\n");
         return -ENOMEM;
     }
 
@@ -181,7 +181,7 @@ static int __init sys_health_init(void) {
 
 static void __exit sys_health_exit(void) {
     printk(KERN_INFO "[CyberGuardians] sys_health module unloading. Group: %s, Members: %s\n",
-           "[Your Group Name]", "[Your Team Member Names]");
+           "TheThreeStooges", "Joshua Martin, Jacob Brashear, Nicholas Christman");
 
     // Remove the /proc entry
     proc_remove(proc_entry);
