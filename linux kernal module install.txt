@@ -23,7 +23,7 @@ PWD := $(shell pwd)
 
 all:
 	$(MAKE) -C $(KDIR) M=$(PWD) modules
-cat
+
 clean:
 	$(MAKE) -C $(KDIR) M=$(PWD) clean
 
@@ -45,4 +45,3 @@ cat /proc/sys_health
 Unload the module:
 sudo rmmod sys_health_monitor
 
-**To change the values of CPU, Ram, and Dis I/O usage you will see the comments in the code from line 28-33 for further details on values and right below the comments are the values that need to be changed for user specific system**
